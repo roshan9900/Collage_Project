@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <style>
+     body {
+        
+        background: url(static/5569184.webp) repeat;
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+    background-attachment: fixed;}
+
+     .logincontent {
+         width: 500px;
+         margin: auto;
+         margin-top: 50px;
+         border: 1px solid #ccc;
+         background: rgba(0, 0, 0, 0.800);
+         padding: 20px;
+         border-radius: 7px;
+         box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+         color: #white;
+         
+     }
+     .logintop h1 {
+         font-size: 32px;
+         color: #444;
+         margin-bottom: 20px;
+         text-align: center;
+         text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+     }
+     .loginbottom .textbox {
+         width: 100%;
+         padding: 10px;
+         border: none;
+         background-color: #f5f5f5;
+         border-radius: 5px;
+         margin-bottom: 10px;
+         box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+         color: #white;
+     }
+     .loginbottom .textbox:focus {
+         outline: none;
+         box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+     }
+     .loginbottom .btn {
+         background-color: #4CAF50;
+         color: #fff;
+         border: none;
+         padding: 10px 20px;
+         border-radius: 5px;
+         cursor: pointer;
+         font-size: 16px;
+         box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+         transition: all 0.2s ease;
+     }
+     .loginbottom .btn:hover {
+         background-color: #3e8e41;
+         transform: scale(1.05);
+     }
+     .loginbottom .btn:active {
+         transform: scale(0.95);
+     }
+     .loginbottom p {
+         text-align: center;
+         color: #888;
+         font-size: 14px;
+         margin-top: 20px;
+     }
+     .loginbottom p a {
+         color: #444;
+         text-decoration: none;
+     }
+     .loginbottom p a:hover {
+         text-decoration: underline;
+     }
+     
+     
+        }
+     .table {
+         color:#white;
+     }
+ </style>
+</head>
+<body>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body {font-family: "Lato", sans-serif}
+.mySlides {display: none}
+</style>
+</head>
+<body>
+
+<!-- Navbar -->
+<div class="w3-top">
+  <div class="w3-bar w3-black w3-card">
+    <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+<a href="{{url_for('index')}}" class="w3-bar-item w3-button w3-padding-large">HOME</a>
+<a href="{{url_for('display')}}" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Display</a>
+<a href="{{url_for('update')}}" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Update</a>
+<a href="{{url_for('select')}}" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Select</a>
+<a href="{{url_for('search')}}" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Search</a>
+<a href="{{url_for('admin')}}" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Admin</a>
+<a href="{{url_for('stocks')}}" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Transaction</a>
+<a href="{{url_for('portfolio')}}" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Portfolio</a>
+<a href="{{url_for('logout')}}" class="w3-bar-item w3-button w3-padding-large w3-hide-small">logout</a>
+  </div>
+</div>
+<div class="w3-content" style="max-width:1300px;margin-top:90px">
+    <div class="logincontent" align="center" style="color: white;">
+                <h1>Your Details</h1>
+                {% block content %}
+                <div class="border">
+                    <table class="worddark">
+                        <tr>
+                            <td>Username:</td>
+                            <td>{{ account['username'] }}</td>
+                        </tr>
+                        <tr>
+                            <td>Password:</td>
+                            <td>{{ account['password'] }}</td>
+                        </tr>
+                        <tr>
+                            <td>Email ID:</td>
+                            <td>{{ account['email'] }}</td>
+                        </tr>
+                    </table>
+                </div>
+                {% endblock %}
+            </div>
+        </div>
+    </div>
+</body>
+</html>

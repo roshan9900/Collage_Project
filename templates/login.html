@@ -1,0 +1,106 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>User Login </title>
+       <style>
+           body {
+              
+              background: url(static/5569184.webp) repeat;
+          background-position: center;
+          background-size: cover;
+          height: 100vh;
+          width: 100%;
+          background-attachment: fixed;}
+
+           .logincontent {
+               width: 500px;
+               margin: auto;
+               margin-top: 50px;
+               border: 1px solid #ccc;
+               background: rgba(0, 0, 0, 0.800);
+               padding: 20px;
+               border-radius: 7px;
+               box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+               color: #white;
+               
+           }
+           .logintop h1 {
+               font-size: 32px;
+               color: #444;
+               margin-bottom: 20px;
+               text-align: center;
+               text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+           }
+           .loginbottom .textbox {
+               width: 100%;
+               padding: 10px;
+               border: none;
+               background-color: #f5f5f5;
+               border-radius: 5px;
+               margin-bottom: 10px;
+               box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+               color: #white;
+           }
+           .loginbottom .textbox:focus {
+               outline: none;
+               box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+           }
+           .loginbottom .btn {
+               background-color: #4CAF50;
+               color: #fff;
+               border: none;
+               padding: 10px 20px;
+               border-radius: 5px;
+               cursor: pointer;
+               font-size: 16px;
+               box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+               transition: all 0.2s ease;
+           }
+           .loginbottom .btn:hover {
+               background-color: #3e8e41;
+               transform: scale(1.05);
+           }
+           .loginbottom .btn:active {
+               transform: scale(0.95);
+           }
+           .loginbottom p {
+               text-align: center;
+               color: #888;
+               font-size: 14px;
+               margin-top: 20px;
+           }
+           .loginbottom p a {
+               color: #444;
+               text-decoration: none;
+           }
+           .loginbottom p a:hover {
+               text-decoration: underline;
+           }
+           
+           
+              }
+           .table {
+               color:#white;
+           }
+       </style>
+    </head>
+    <body>
+ <div class="logincontent" align="center" style="color: white;">
+            <div class="logintop">
+                <h1>User Login</h1>
+            </div>
+            <div class="loginbottom">
+                <form action="{{ url_for('login')}}" method="POST" autocomplete="off">
+                    <div class="msg">{{ msg }}</div>
+                    <input type="text" name="username" placeholder="Enter Your Username" class="textbox" id="username" required>
+                    <input type="password" name="password" placeholder="Enter Your Password" class="textbox" id="password" required>
+                    <input type="submit" class="btn" value="Login">
+                </form>
+            <p>New to this page? <a href="{{ url_for('register')}}">Register here</a></p>
+            <p>Forgot Password <a href="{{ url_for('forget')}}">Reset here</a></p>
+            <p>Admin Login <a href="{{ url_for('adminlogin')}}">Login here</a></p>
+
+            </div>
+        </div>
+    </body>
+</html>
